@@ -23,4 +23,30 @@ public class MatrixTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void givenMatrix_checkTranspose() {
+        int[][] input = {{1,2,3},
+                         {4,5,6},
+                         {7,8,9}};
+        int[][] expected = {{1,4,7},
+                            {2,5,8},
+                            {3,6,9}};
+        int[][] actual = MatrixTranspose.transpose(input, input.length);
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void givenMatrix_usingInplace_checkTranspose() {
+        int[][] input = {{1,2,3},
+                {4,5,6},
+                {7,8,9}};
+        int[][] expected = {{1,4,7},
+                {2,5,8},
+                {3,6,9}};
+        int[][] actual = MatrixTranspose.transposeInplace(input, input.length);
+
+        assertArrayEquals(expected, actual);
+    }
 }
